@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <Head>
+        <title>Auto-Complete</title>
+
+        <link rel="stylesheet" href="AutoComplete.css">
+
+        <script src="AutoComp.js"></script>
+    </Head>
+
+    <body>
+
+        <form autocomplete="off">
+            <div class="main">
+                <div style="padding-top: 5px; style="width:300px;">
+                    <label>Country name : </label>
+                </div>
+                <div>
+                    <input type="text" name="in" id="input" onkeyup="showResults(this.value)" placeholder="Country....">
+                </div>
+                <div id="result" ></div>
+             </div> 
+        </form>
+
+    </body>
+</html>
