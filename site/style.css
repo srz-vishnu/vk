@@ -1,0 +1,86 @@
+ .grid-container {
+              display: grid;
+              grid-template-columns: 33% 33% 33%;
+              padding: 40px;
+            }
+            .grid-left {
+              display: grid;
+              grid-template-columns: 40% 60%;
+              align-items: center;
+              padding: 40px;
+            }
+            .grid-right {
+              display: grid;
+              grid-template-columns: 60% 40%;
+              align-items: center;
+              padding: 40px;
+            }
+            .grid-item {
+		background-color: cyan;
+   		border: 1px solid black;
+		padding: 10px;
+		font-size: 15px;
+                text-align: center;
+                
+            }
+
+            .image{
+                border-radius: 50%;
+                width: 60%;
+                height: 60%;
+            }
+
+            .mydiv
+            {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+
+            .button1 {
+                background-color: #4c90af;
+                border: none;
+            }
+            
+            .button1:hover {
+                background-color: #0066ff;
+            }
+
+
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            li {
+                float: left;
+                }
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover {
+                background-color: #fff;
+                color: #000;
+            }
+            .navc{
+    
+            float: left; 
+            padding-top: 30px;  
+            }
+	    nav a {
+    
+    	   display: block;
+    	   color: rgb(16, 17, 107);
+           text-align: center;
+           padding: 14px 16px;
+           font-size: larger;
+           font-weight: bold;
+           display: inline;
+           }
