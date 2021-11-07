@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORM</title>
+        
+    <title>Registration Form</title>    
+    <style type="text/css">    
+        body{    
+            font-family: Calibri; 
+            background-color: antiquewhite;  
+        }    
+        input[type="text"] {    
+            width: 250px;    
+        }    
+        input[type="submit"], input[type="reset"] {    
+            width: 77px;    
+            height: 27px;    
+            position: relative;left: 180px;    
+        }  
+        h1{
+            text-align: center;
+        }  
+        form{    
+            text-align: center;    
+            font-family: Calibri;    
+            font-size: 20px;    
+            border: 3px solid black;    
+            width: 600px;    
+            margin: 20px auto;    
+        }    
+        td {    
+            padding: 10px;    
+        }    
+        td:first-child {    
+            text-align: right;    
+            font-weight: bold;    
+        }    
+        td:last-child {    
+            text-align: left;    
+    
+    </style>    
+
+    <script>
+            function validate()
+            {
+            
+                var name =document.forms["form1"]["fname"].value;
+                var age = document.forms["form1"]["age"].value;
+                var gender = document.forms["form1"]["gender"].value;
+                var father = document.forms["form1"]["fatname"].value;
+                var occupation = document.forms["form1"]["occupation"].value;
+                let text;
+                
+                
+                
+                if(name.charAt(0) == name.charAt(0).toUpperCase() && name.length >0)
+                {
+                    if(!isNaN(age) && age > 0 && age < 100)
+                    {
+                        if(gender.length >0)
+                        {
+                           if(father.charAt(0) == father.charAt(0).toUpperCase()  && father.length >0)
+                            {
+                                if(occupation.length >0)
+                                {
+                                    text = "Registration successful";
+                                }
+                                else
+                                {
+                                    window.alert("Enter Occupation");
+                                }
+                            }
+                            else
+                            {
+                                window.alert("First Letter of Father name should be Capital and you must fill the name label");
+                            }
+                        }
+                        else
+                        {
+                            window.alert("Select a Gender");
+                        }
+
+                       
+                    }
+                    else
+                    {
+                        window.alert("Age Should be a number");
+                    }
+                 
+                }
+                else
+                {
+                    window.alert("First Letter of name should be Capital and you must fill the name label");
+                }
+               
+
+               
+
+                
+
+                
+                document.getElementById("demo").innerHTML = text;
+
+            }
+            
+        </script>
+
+    </head>
+    <body>
+         <h1>Registration Form</h1>
+        <form name="form1"  onsubmit="return validate()" method="post">
+
+            <table>    
+            <tr>    
+                <td><label>First Name: </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="First Name">    
+                </td>    
+            </tr>    
+            <tr>
+                <td><label>Age:</label></td>
+                <td>
+                    <input type="text" name="age" size="3" maxlength="3" placeholder="Age">
+                </td>
+            </tr>
+            <tr>    
+                <td><label>Father Name: </label></td>    
+                <td>    
+                    <input type="text" name="fatname" placeholder="Father Name">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Occupation: </label></td>    
+                <td>    
+                    <input type="textarea" size="50" name="occupation" placeholder="Occupation">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Gender: </label></td>    
+                <td>    
+                    <input type="radio" name="gender" value="male">Male    
+                    <input type="radio" name="gender" value="femele">Female
+                    <input type="radio" name="gender" value="other">other   
+                </td>    
+            </tr>    
+            
+            <tr>    
+                <td>    
+                    <input type="submit" name="submit" value="Submit">    
+                    <input type="reset" name="reset" value="Reset">    
+                </td>    
+            </tr>             
+        </table>    
+
+        </form>
+
+        
+        <p id="demo"></p> 
+
+  </body>
+</html>
