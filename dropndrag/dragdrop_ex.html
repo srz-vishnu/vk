@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <style>
+
+            .grid-half {
+                display: grid;
+                margin: 10px;
+                height: 650px;
+                grid-template-columns: 50% 50%;
+                padding: 40px;
+                background-color: gray;
+            }
+
+            .half{
+                height: 600px;
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid red;
+                background-color: white;
+            }
+
+            .items{
+                margin: 10px;
+                width: 50%;
+                padding: 10px;
+                border: 1px solid black;
+                text-align: center;
+                
+            }
+            
+
+        </style>
+
+        <script>
+
+            function allowDrop(ev) 
+            {
+                ev.preventDefault();
+            }
+
+            function drag(ev) 
+            {
+              ev.dataTransfer.setData("text", ev.target.id);
+            }
+                
+            function drop(ev) 
+            {
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("text");
+              ev.target.appendChild(document.getElementById(data));
+            }
+
+        </script>
+    </head>
+
+    <body>
+            
+        <div class="grid-half">
+
+
+            <div class="half" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                <div class="items" draggable="true" ondragstart="drag(event)" id="one" style="background-color: rgb(228, 22, 166);">1</div>
+
+                <div class="items" draggable="true" ondragstart="drag(event)" id="two" style="background-color: rgb(88, 105, 141);">2</div>
+
+                <div class="items" draggable="true" ondragstart="drag(event)" id="three" style="background-color: yellow;">3</div>
+
+            </div>
+
+            <div class="half" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                <div class="items" draggable="true" ondragstart="drag(event)" id="four" style="background-color: cyan;">4</div>
+
+                <div class="items" draggable="true" ondragstart="drag(event)" id="five" style="background-color: rgb(95, 126, 81);">5</div>
+
+                <div class="items" draggable="true" ondragstart="drag(event)" id="six" style="background-color: pink;">6</div>
+            
+            </div>
+
+        </div>  
+            
+    </body>
+    
+</html>
+
